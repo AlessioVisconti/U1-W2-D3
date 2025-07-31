@@ -141,7 +141,9 @@ const eyeColor = {
   Ogni personaggio dovrà finire nell'array corrispondente al suo colore degli occhi (al valore della sua proprietà "eye_color").
 */
 for (let i = 0; i < starWarsCharacters.length; i++) {
-  switch (starWarsCharacters[i].eye_color) {
+  switch (
+    starWarsCharacters[i].eye_color //si è raggiunto l'eye_color di tutti i personaggi e poi mano mano valutiamo tutti i vari casi
+  ) {
     case "blue":
       eyeColor.blue.push(starWarsCharacters[i]); //diciamo prima dove deve andare a creare il personaggio poi gli diamo la specifica per far capire chi deve prendere e gli diciamo tramite push di andarlo a creare dove gli abbiamo detto all'inizio, tra parentesi gli diciamo appunto dove prenderlo, se non c'è passa alla casistica dopo.
       break;
@@ -186,11 +188,30 @@ console.log("Questa è la massa dell'equipaggio:", crewMass);
 
   Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se riesci ad ottenere un messaggio diverso.
 */
+/*let lukeNewMass = prompt("Luke aggiorna il tuo peso");
+starWarsCharacters[0].masss = Number(lukeNewMass); //Aggiorna la proprietà mass di Luke con il valore inserito convertendolo in numero perchè se inserito tramite prompt varrebbe come stringa
+let navMass = crewMass;
+if (navMass < 500) {
+  alert("Ship is under loaded");
+} else if (navMass >= 500 && navMass < 700) {
+  alert("Ship is half loaded");
+} else if (navMass >= 700 && navMass < 900) {
+  alert("Warning: Load is over 700");
+} else if (navMass >= 900 && navMass < 1000) {
+  alert("Critical Load: Over 900");
+} else if (navMass >= 1000) {
+  alert("DANGER! OVERLOAD ALERT: escape from ship now!");
+}
 
 /* ESERCIZIO 8
   Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi effettuare la riassegnazione del valore corrispondente o creare un nuovo array)
 */
-
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  if (starWarsCharacters[i].gender === "n/a") {
+    starWarsCharacters[i].gender = "robot";
+  }
+}
+console.log("Cambio Gender in Robot", starWarsCharacters);
 /* --EXTRA-- ESERCIZIO 9
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames" le stringhe corrispondenti a personaggi con lo stesso nome.
   Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
